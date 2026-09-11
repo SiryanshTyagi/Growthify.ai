@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --brand-page-rgb: 13 17 23;
+  --brand-sidebar-rgb: 15 25 35;
+  --brand-card-rgb: 22 31 46;
+  --brand-card-hover-rgb: 26 37 55;
+  --brand-accent-rgb: 0 230 195;
+  --brand-text-primary-rgb: 230 244 243;
+  --brand-text-secondary-rgb: 143 183 181;
+  --brand-text-muted-rgb: 143 183 181;
+  --brand-text-dark-rgb: 13 17 23;
+  --brand-border-rgb: 255 255 255;
+  --brand-topbar-rgb: 15 25 35;
+}
+
+:root[data-theme="light"] {
+  --brand-page-rgb: 238 246 246;
+  --brand-sidebar-rgb: 206 226 223;
+  --brand-card-rgb: 255 255 255;
+  --brand-card-hover-rgb: 245 252 251;
+  --brand-accent-rgb: 46 212 191;
+  --brand-text-primary-rgb: 31 41 55;
+  --brand-text-secondary-rgb: 71 85 105;
+  --brand-text-muted-rgb: 100 116 139;
+  --brand-text-dark-rgb: 15 23 42;
+  --brand-border-rgb: 15 23 42;
+  --brand-topbar-rgb: 255 255 255;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(var(--brand-page-rgb) / 1);
+  color: rgb(var(--brand-text-primary-rgb) / 1);
+  overflow-x: hidden;
+}

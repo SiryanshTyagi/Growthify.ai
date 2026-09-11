@@ -1,0 +1,268 @@
+.generatorGrid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 24px;
+  height: calc(100vh - 140px);
+}
+
+.leftPanel {
+  background: #161f2e;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow-y: auto;
+}
+
+.rightPanel {
+  background: #161f2e;
+  border-radius: 16px;
+  border: 1px solid #00e6c3;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 230, 195, 0.05);
+}
+
+.outputHeader {
+  padding: 16px 20px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.outputTitle {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e6f4f3;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tabBtn {
+  background: transparent;
+  border: none;
+  color: #8fb7b5;
+  font-size: 13px;
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.tabBtnActive {
+  color: #e6f4f3;
+  border-bottom-color: #00e6c3;
+}
+
+.chatArea {
+  flex: 1;
+  padding: 18px 20px;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: minmax(180px, 1fr) auto;
+  gap: 14px;
+}
+
+.generatedBox {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  line-height: 1.55;
+  color: #dff6f4;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  padding: 14px;
+  min-height: 0;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.chatMessages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 180px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.chatBubble {
+  max-width: 82%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.aiBubble {
+  align-self: flex-start;
+  background: rgba(0, 230, 195, 0.08);
+  border: 1px solid rgba(0, 230, 195, 0.25);
+  color: #dff6f4;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.userBubble {
+  align-self: flex-end;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e6f4f3;
+}
+
+.inputContainer {
+  padding: 16px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #161f2e;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #0f1923;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 8px 8px 8px 14px;
+}
+
+.inputWrapper:focus-within {
+  border-color: #00e6c3;
+}
+
+.textInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #e6f4f3;
+  font-size: 14px;
+  outline: none;
+}
+
+.sendBtn {
+  background: #00e6c3;
+  color: #0d1117;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sendBtn:disabled {
+  background: rgba(0, 230, 195, 0.35);
+  cursor: not-allowed;
+}
+
+.mainContainer {
+  background: transparent;
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mainContainer::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 1040px) {
+  .generatorGrid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .leftPanel,
+  .rightPanel {
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 640px) {
+  .leftPanel {
+    padding: 14px;
+    gap: 14px;
+  }
+
+  .rightPanel {
+    min-height: 420px;
+  }
+
+  .outputHeader {
+    padding: 12px 12px 10px;
+  }
+
+  .chatArea {
+    padding: 12px;
+    grid-template-rows: minmax(150px, 1fr) auto;
+  }
+
+  .chatBubble {
+    max-width: 92%;
+  }
+
+  .inputContainer {
+    padding: 12px;
+  }
+
+  .sendBtn {
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+}
+
+:global([data-theme="light"]) .leftPanel,
+:global([data-theme="light"]) .rightPanel,
+:global([data-theme="light"]) .inputContainer {
+  background: rgb(var(--brand-card-rgb) / 1);
+}
+
+:global([data-theme="light"]) .leftPanel,
+:global([data-theme="light"]) .rightPanel,
+:global([data-theme="light"]) .outputHeader,
+:global([data-theme="light"]) .inputContainer,
+:global([data-theme="light"]) .inputWrapper,
+:global([data-theme="light"]) .generatedBox,
+:global([data-theme="light"]) .outputTitle {
+  border-color: rgb(var(--brand-border-rgb) / 0.14);
+}
+
+:global([data-theme="light"]) .outputTitle,
+:global([data-theme="light"]) .generatedBox,
+:global([data-theme="light"]) .userBubble,
+:global([data-theme="light"]) .tabBtnActive,
+:global([data-theme="light"]) .textInput {
+  color: rgb(var(--brand-text-primary-rgb) / 1);
+}
+
+:global([data-theme="light"]) .tabBtn,
+:global([data-theme="light"]) .aiBubble {
+  color: rgb(var(--brand-text-secondary-rgb) / 1);
+}
+
+:global([data-theme="light"]) .userBubble {
+  background: rgb(var(--brand-page-rgb) / 0.5);
+  border-color: rgb(var(--brand-border-rgb) / 0.2);
+}
+
+:global([data-theme="light"]) .inputWrapper {
+  background: rgb(var(--brand-page-rgb) / 0.65);
+}
+
+:global([data-theme="light"]) .sendBtn {
+  color: rgb(var(--brand-text-dark-rgb) / 1);
+}

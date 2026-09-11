@@ -1,0 +1,20 @@
+# root
+node_modules/
+.env
+.env.*
+logs/
+dist/
+
+# backend
+GrowthSynch-backend/node_modules/
+GrowthSynch-backend/logs/
+GrowthSynch-backend/.env
+
+# frontend
+GrowthSync-fronted/node_modules/
+GrowthSync-fronted/dist/
+GrowthSync-fronted/.env
+
+# misc
+.DS_Store
+Thumbs.db

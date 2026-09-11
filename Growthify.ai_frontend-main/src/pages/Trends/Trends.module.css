@@ -1,0 +1,149 @@
+/* Card Pop-out & Dynamic Effect */
+.trendCard {
+  background: #161f2e;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 22px 20px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.3s ease, 
+              border-color 0.3s ease;
+}
+
+.trendCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(0, 230, 195, 0.4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 230, 195, 0.1);
+}
+
+/* Dynamic Shine (Light reflection on hover) */
+.trendCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right, 
+    transparent, 
+    rgba(255, 255, 255, 0.08), 
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: all 0.6s ease;
+}
+
+.trendCard:hover::before {
+  left: 125%;
+}
+
+/* Button Effects */
+.saveBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: #0f1923; 
+  color: rgba(143, 183, 181, 0.7);
+  padding: 9px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  font-weight: 500;
+  font-size: 12.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.saveBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #E6F4F3;
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.deleteBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: #1a0f10; 
+  color: rgba(255, 100, 100, 0.7);
+  padding: 9px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 100, 100, 0.3);
+  font-weight: 500;
+  font-size: 12.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.deleteBtn:hover {
+  background: rgba(255, 100, 100, 0.15);
+  color: #ff6464;
+  border-color: rgba(255, 100, 100, 0.6);
+  transform: translateY(-2px);
+}
+
+.projectBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: #00E6C3;
+  color: #0d1117;
+  padding: 9px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 700;
+  font-size: 12.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 230, 195, 0.2);
+}
+
+.projectBtn:hover {
+  background: #1affdf;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 230, 195, 0.5);
+}
+
+@media (max-width: 640px) {
+  .trendCard {
+    padding: 16px 14px;
+    border-radius: 12px;
+  }
+
+  .saveBtn,
+  .deleteBtn,
+  .projectBtn {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+:global([data-theme="light"]) .trendCard {
+  background: rgb(var(--brand-card-rgb) / 1);
+  border-color: rgb(var(--brand-border-rgb) / 0.15);
+}
+
+:global([data-theme="light"]) .saveBtn {
+  background: rgb(var(--brand-page-rgb) / 0.55);
+  color: rgb(var(--brand-text-secondary-rgb) / 1);
+  border-color: rgb(var(--brand-border-rgb) / 0.18);
+}
+
+:global([data-theme="light"]) .saveBtn:hover {
+  background: rgb(var(--brand-page-rgb) / 0.75);
+  color: rgb(var(--brand-text-primary-rgb) / 1);
+  border-color: rgb(var(--brand-border-rgb) / 0.25);
+}
+
+:global([data-theme="light"]) .projectBtn {
+  color: rgb(var(--brand-text-dark-rgb) / 1);
+}

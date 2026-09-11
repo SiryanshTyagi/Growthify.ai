@@ -1,0 +1,29 @@
+.dashboardShell {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboardBody {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.dashboardMain {
+  flex: 1;
+  padding: 28px 32px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+@media (max-width: 900px) {
+  .dashboardBody {
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  .dashboardMain {
+    padding: 18px 14px 20px;
+  }
+}

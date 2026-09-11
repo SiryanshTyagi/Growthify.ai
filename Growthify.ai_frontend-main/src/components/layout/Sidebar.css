@@ -1,0 +1,75 @@
+.dashboardSidebar {
+  width: 210px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 10px;
+  flex-shrink: 0;
+}
+
+.sidebarUser {
+  text-align: center;
+  margin-bottom: 14px;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebarNavBtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  text-align: left;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .dashboardSidebar {
+    width: 100%;
+    padding: 10px 10px 8px;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .sidebarUser {
+    display: none;
+  }
+
+  .sidebarNav {
+    flex-direction: row;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .sidebarNav::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .sidebarNav::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+  }
+
+  .sidebarNavBtn {
+    gap: 8px;
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .sidebarNavLabel {
+    font-size: 11px;
+  }
+}
