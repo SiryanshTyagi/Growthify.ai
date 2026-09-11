@@ -1,7 +1,7 @@
 # Growthify - AI-Powered Content Creation Platform
 
 <div align="center">
-  <img src="GrowthSync-fronted/public/Growthify.png" alt="GrowthSync Logo" width="200"/>
+ 
   
   **Transform your content creation workflow with AI-powered tools**
   
